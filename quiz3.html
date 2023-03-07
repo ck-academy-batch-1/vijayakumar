@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        body{
+            background:url('image.jpg');
+            background-size:cover ;
+        }
+        div{
+            border: 2px dashed black;
+            margin-top: 5%;
+            justify-items: center;
+            background-color: white;
+            border-radius: 10px;
+        }
+        hr{
+            border: 1px solid black;
+        }
+       .topic{
+            margin-top: 2%;
+            border: 2px solid black;
+            background-color: white;
+            border-radius: 10px;
+       }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    </head>
+<body>
+    <div class="topic">
+        <center>
+            <h1>Online Quiz</h1>
+        </center>
+    </div> 
+   <div>
+    <p id="option"></p>
+    <p>1.what is the national game in india? </p>
+        <ul style="list-style-type:none;">
+           <li id="green"><input type="radio" name="r1" id="correct" value="Golgumbaz" required>hockey</li>
+            <li id="red"><input type="radio" name="r1" id="wrong" value="Kudub minar" required>football</li>
+            <li id="red2"><input type="radio" name="r1" id="wrong2" value="sarnath pillar" required>cricket</li>
+            <li id="red3"><input type="radio" name="r1" id="wrong3" value="India gate" required>basketball</li>
+            <!--<li><button type="button" onclick="Myfunction()">click here</button></li>-->
+            <p id="ans" style="display:none; color: white; background-color: green;">Correct Answer:Golgumbaz</p>
+        </ul>
+        <hr>
+            <p>2.Which is the Electronic capital of india?</p>
+            <ul style="list-style-type:none;">
+               <li id="green2"><input type="radio" name="r2" id="correct2" value="bangalore" required>bangalore</li>
+                <li id="red4"><input type="radio" name="r2" id="wrong4" value="chennai" required>chennai</li>
+                <li id="red5"><input type="radio" name="r2" id="wrong5" value="mumbai" required>mumbai</li>
+                <li id="red6"><input type="radio" name="r2" id="wrong6" value="kolkata" required>kolkata</li>
+                <p id="ans2" style="display:none; color: white; background-color: green;">Correct Answer:bangalore</p><br>
+                <input type="submit" onclick="Myfunction()" value="submit">
+                <input type="reset" value="clear">
+            </ul>
+            <hr>
+   <div>
+    <p id="answer" style="text-align:center; font-size: medium; font-weight: bold;">Your Answer is:<span id="score">0</span></p>
+   </div>
+    <script>
+      function Myfunction()
+      {
+        var score=0;
+        if(document.getElementById('correct').checked){
+           score++;
+           document.getElementById('green').style.backgroundColor="green";
+           document.getElementById('green').style.color="white";
+        }
+     if(document.getElementById('wrong').checked){
+          alert("wrong answer");
+          alert("your correct answer is");
+          document.getElementById('red').style.backgroundcolor="red";
+          document.getElementById("ans").style.display="block";
+          document.getElementById('red').style.color="white";
+       }
+        if(document.getElementById('wrong2').checked){
+            alert("wrong answer");
+          alert("your correct answer is");
+          
+          document.getElementById('red2').style.backgroundColor="red";
+          document.getElementById("ans").style.display="block";
+       }
+        if(document.getElementById('wrong3').checked){
+          alert("wrong answer");
+          alert("your correct answer is");
+          document.getElementById('red3').style.backgroundColor="red";
+          document.getElementById("ans").style.display="block";
+       }
+        if(document.getElementById('correct2').checked){
+           score++;
+           document.getElementById('green2').style.backgroundColor="green";
+           document.getElementById('green2').style.color="white";
+        }
+       
+        if(document.getElementById('wrong4').checked){
+           document.getElementById("ans2").style.display="block";
+           document.getElementById('red4').style.backgroundcolor="red";
+          
+        }
+     if(document.getElementById('wrong5').checked){
+        document.getElementById("ans2").style.display="block";
+          document.getElementById('red5').style.backgroundcolor="red";
+         
+       }
+     if(document.getElementById('wrong6').checked){
+        document.getElementById("ans2").style.display="block";
+          document.getElementById('red6').style.backgroundcolor="red";
+          
+       }
+         alert("Your Score is:"+score);
+        document.getElementById("score").innerHTML=score;
+        }
+        
+    </script>
+</html>
